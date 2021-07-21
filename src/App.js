@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import RankingDisplay from "./components/RankingDisplay";
+import "./App.css";
 
 function App() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  const getData = () => {
+    fetch("http://localhost:8081/words/ranking")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          result.ranking !== undefined ? setData(result) : setError(true);
+        },
+        (error) => {
+          console.log("error", error);
+          setData([]);
+          setError(true);
+        }
+      );
+  };
+
+  const loadData = () =>{
+    setData(getData());
+    //console.log("aca: ",getData());
+  }
+
+  useEffect(() => {
+    if (data === null) loadData();
+  }, [data]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1 className="title">Word Counter (Desafío Banco Internacional)</h1>
+        <p>Ranking de las palabras con mayor ocurrencia</p>
+        <button onClick={getData} className="btn" title="Actualizar">
+          <span>&#x21bb;</span>
+        </button>
+      </div>
+      {!error ? <RankingDisplay {...data} /> : <div className="error">Ha ocurrido un error</div>}
     </div>
   );
 }
