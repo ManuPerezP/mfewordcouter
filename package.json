@@ -11,10 +11,19 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
+  "jest": {
+    "collectCoverageFrom": [
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!<rootDir>/src/index.js",
+        "!<rootDir>/src/reportWebVitals.js",
+        "!<rootDir>/src/serviceWorker.js",
+        "!<rootDir>/node_modules/"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
