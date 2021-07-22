@@ -14,17 +14,15 @@ function App() {
           result.ranking !== undefined ? setData(result) : setError(true);
         },
         (error) => {
-          console.log("error", error);
           setData([]);
           setError(true);
         }
       );
   };
 
-  const loadData = () =>{
+  const loadData = () => {
     setData(getData());
-    //console.log("aca: ",getData());
-  }
+  };
 
   useEffect(() => {
     if (data === null) loadData();
@@ -39,7 +37,11 @@ function App() {
           <span>&#x21bb;</span>
         </button>
       </div>
-      {!error ? <RankingDisplay {...data} /> : <div className="error">Ha ocurrido un error</div>}
+      {!error ? (
+        <RankingDisplay {...data} />
+      ) : (
+        <div className="error">Ha ocurrido un error</div>
+      )}
     </div>
   );
 }

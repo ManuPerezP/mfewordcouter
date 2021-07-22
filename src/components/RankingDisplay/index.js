@@ -12,19 +12,19 @@ const RankingDisplay = ({ title, fullText, ranking = [] }) => {
 
       <div>
         <table key="table-1">
-        <thead> 
-          <tr>
-            <th>Palabra</th>
-            <th>Ocurencias</th>
-          </tr>
-          </thead> 
-          <tbody>
-          {ranking.map((element,i) => (
-            <tr key={`tr-${i}`}>
-              <td>{element.word}</td>
-              <td>{element.ocurrences}</td>
+          <thead>
+            <tr>
+              <th>Palabra</th>
+              <th>Ocurencias</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {ranking.map((element, i) => (
+              <tr key={`tr-${i}`}>
+                <td>{element.word}</td>
+                <td>{element.ocurrences}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

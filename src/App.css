@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.App div p:nth-child(3){
+.App div p:nth-child(3) {
   background-color: #001a72;
   padding: 15px 15px;
   color: #818181;
@@ -14,34 +14,29 @@
   border-radius: 5px;
 }
 
-
-
-.title{
+.title {
   background-color: #001a72;
   padding: 15px 15px;
   color: #fff;
   border-radius: 5px;
 }
 
-.btn{
+.btn {
   font-size: 24px;
   border: none;
   background-color: green;
   color: #fff;
   border: 1px solid green;
   border-radius: 3px;
-
-
 }
-.btn:hover{
+.btn:hover {
   cursor: pointer;
   background-color: #fff;
   color: green;
   box-shadow: 1px 1px 10px 1px #818181;
-
 }
 
-.error{
+.error {
   color: red;
   padding: 15px 0;
 }
