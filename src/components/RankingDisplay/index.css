@@ -1,5 +1,5 @@
 .ranking-container{
-    animation: apear .5s ease-in-out;
+    animation: apear .5s ea;
 }
 
 
@@ -27,7 +27,7 @@ table {
     padding: 8px;
   }
 
-  th{
+  th,h3{
     color: #fff;
 }
   
@@ -36,8 +36,8 @@ table {
     color: #000;
   }
   tr:nth-child(odd) {
-    background-color: black;
-    color: #898989;
+    background-color: #001a72;
+    color: #fff;
   }
 
   .ranking-container{

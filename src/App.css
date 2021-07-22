@@ -6,6 +6,23 @@
   align-items: center;
 }
 
+.App div p:nth-child(3){
+  background-color: #001a72;
+  padding: 15px 15px;
+  color: #818181;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+
+
+.title{
+  background-color: #001a72;
+  padding: 15px 15px;
+  color: #fff;
+  border-radius: 5px;
+}
+
 .btn{
   font-size: 24px;
   border: none;

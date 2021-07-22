@@ -6,7 +6,7 @@ const RankingDisplay = ({ title, fullText, ranking = [] }) => {
   return (
     <div className="ranking-container" key="r-container">
       <h2>Texto:</h2>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{fullText}</p>
       <h3>Ranking de palabras:</h3>
 
