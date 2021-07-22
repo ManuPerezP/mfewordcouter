@@ -20,9 +20,9 @@ function App() {
       );
   };
 
-  const loadData = () => {
+  const loadData = () =>{
     setData(getData());
-  };
+  }
 
   useEffect(() => {
     if (data === null) loadData();
@@ -37,11 +37,7 @@ function App() {
           <span>&#x21bb;</span>
         </button>
       </div>
-      {!error ? (
-        <RankingDisplay {...data} />
-      ) : (
-        <div className="error">Ha ocurrido un error</div>
-      )}
+      {!error ? <RankingDisplay {...data} /> : <div className="error">Ha ocurrido un error</div>}
     </div>
   );
 }
